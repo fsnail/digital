@@ -1,7 +1,124 @@
-안녕하세요.<br>
-만나서 반갑습니다.<br>
-저는 <a href="https://www.dst.ac.kr">대전과학기술대학교</a> 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Learning Hub - 영어 학습 허브</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">English Learning Hub</h1>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">홈</a></li>
+                    <li><a href="#vocabulary" class="nav-link">단어장</a></li>
+                    <li><a href="#quiz" class="nav-link">퀴즈</a></li>
+                    <li><a href="#grammar" class="nav-link">문법</a></li>
+                    <li><a href="#resources" class="nav-link">학습자료</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
+    <main>
+        <!-- 홈 섹션 -->
+        <section id="home" class="section">
+            <div class="hero">
+                <h2>Welcome to English Learning Hub!</h2>
+                <p>영어 실력을 향상시킬 준비가 되셨나요?</p>
+                <button class="cta-button" onclick="scrollToSection('vocabulary')">학습 시작하기</button>
+            </div>
+            
+            <div class="daily-section">
+                <h3>오늘의 영어</h3>
+                <div class="daily-content">
+                    <div class="daily-word">
+                        <h4>오늘의 단어</h4>
+                        <p id="daily-word-display" class="word-display"></p>
+                        <p id="daily-word-meaning" class="meaning-display"></p>
+                    </div>
+                    <div class="daily-quote">
+                        <h4>오늘의 명언</h4>
+                        <p id="daily-quote-display" class="quote-display"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- 단어장 섹션 -->
+        <section id="vocabulary" class="section">
+            <h2>나만의 단어장</h2>
+            <div class="vocab-container">
+                <div class="vocab-input">
+                    <input type="text" id="word-input" placeholder="영어 단어">
+                    <input type="text" id="meaning-input" placeholder="뜻">
+                    <button onclick="addWord()">단어 추가</button>
+                </div>
+                <div class="vocab-list" id="vocab-list"></div>
+            </div>
+        </section>
 
-<font color=red>홍길동</font>입니다.
+        <!-- 퀴즈 섹션 -->
+        <section id="quiz" class="section">
+            <h2>영어 퀴즈</h2>
+            <div class="quiz-container">
+                <div class="quiz-type-selector">
+                    <button onclick="startQuiz('vocabulary')" class="quiz-type-btn">단어 퀴즈</button>
+                    <button onclick="startQuiz('grammar')" class="quiz-type-btn">문법 퀴즈</button>
+                </div>
+                <div id="quiz-area" class="quiz-area">
+                    <div id="quiz-question"></div>
+                    <div id="quiz-options"></div>
+                    <div id="quiz-result"></div>
+                    <div id="quiz-score"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 문법 섹션 -->
+        <section id="grammar" class="section">
+            <h2>문법 학습</h2>
+            <div class="grammar-container">
+                <div class="grammar-topics">
+                    <button onclick="showGrammar('tenses')" class="grammar-btn">시제</button>
+                    <button onclick="showGrammar('conditionals')" class="grammar-btn">조건문</button>
+                    <button onclick="showGrammar('passive')" class="grammar-btn">수동태</button>
+                    <button onclick="showGrammar('reported')" class="grammar-btn">간접화법</button>
+                </div>
+                <div id="grammar-content" class="grammar-content"></div>
+            </div>
+        </section>
+
+        <!-- 학습자료 섹션 -->
+        <section id="resources" class="section">
+            <h2>학습 자료실</h2>
+            <div class="resources-container">
+                <div class="resource-card">
+                    <h3>읽기 자료</h3>
+                    <p>다양한 수준의 영어 읽기 자료</p>
+                    <button onclick="showResources('reading')">보기</button>
+                </div>
+                <div class="resource-card">
+                    <h3>듣기 자료</h3>
+                    <p>실전 영어 듣기 연습</p>
+                    <button onclick="showResources('listening')">보기</button>
+                </div>
+                <div class="resource-card">
+                    <h3>동영상 강의</h3>
+                    <p>문법과 회화 동영상 강의</p>
+                    <button onclick="showResources('videos')">보기</button>
+                </div>
+            </div>
+            <div id="resource-display" class="resource-display"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 English Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
